@@ -12,15 +12,14 @@ public class StaticMethodsOfStream {
 
         //Распечатать элементы от 1 до 100
         AtomicInteger number = new AtomicInteger(0);
-        Stream.generate(() -> number.incrementAndGet()).limit(100).forEach(e -> System.out.println(e));
+        Stream.generate(number::incrementAndGet).limit(100).forEach(e -> System.out.println(e));
         IntStream.range(1, 101).forEach(e -> System.out.println(e));
         System.out.println();
 
+        //Объединение стримов
         Stream<Integer> integerStream = Stream.of(1, 2, 3);
         Stream<Integer> integerStream2 = Stream.of(4, 5);
 
         Stream.concat(integerStream, integerStream2).forEach(e -> System.out.println(e));
-
-
     }
 }

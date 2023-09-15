@@ -1,4 +1,4 @@
-package org.javaacademy.stream_api;
+package org.javaacademy.stream_api.theory_part_1;
 
 @FunctionalInterface
 public interface Flyable {
